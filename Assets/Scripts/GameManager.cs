@@ -47,6 +47,11 @@ public class GameManager : MonoBehaviour
         SetBall(BallColor.Black, 7);
 
         CameraBehideCueBall();
+
+        if (Settings.fromSave)
+        {
+            LoadGame();
+        }
     }
 
     // Update is called once per frame
@@ -66,6 +71,9 @@ public class GameManager : MonoBehaviour
 
         if(Keyboard.current.backspaceKey.wasPressedThisFrame)
             StopBall();
+
+        if (Keyboard.current.leftShiftKey.isPressed && Keyboard.current.sKey.wasPressedThisFrame)
+            SaveGame();
     }
 
     private void SetBall(BallColor col, int i)
@@ -120,5 +128,27 @@ public class GameManager : MonoBehaviour
     public void ShowString(string s)
     {
         notiText.text = s;
+    }
+    private void SaveGame()
+    {
+        StopBall();
+
+        if (cueBall != null)
+        {
+            PlayerPrefs.SetFloat("cueBallX", cueBall.transform.position.x);
+            PlayerPrefs.SetFloat("cueBallY", cueBall.transform.position.y);
+            PlayerPrefs.SetFloat("cueBallZ", cueBall.transform.position.z);
+        }
+    }
+
+    private void LoadGame()
+    {
+        if (cueBall != null)
+        {
+            float x = PlayerPrefs.GetFloat("cueBallX", cueBall.transform.position.x);
+            float y = PlayerPrefs.GetFloat("cueBallY", cueBall.transform.position.y);
+            float z = PlayerPrefs.GetFloat("cueBallZ", cueBall.transform.position.z);
+            cueBall.transform.position = new Vector3(x, y, z);
+        }
     }
 }

@@ -20,6 +20,13 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
+        Settings.fromSave = false;
+        SceneManager.LoadScene("Loading");
+    }
+
+    public void LoadSaveGame()
+    {
+        Settings.fromSave = true;
         SceneManager.LoadScene("Loading");
     }
     public void ExitGame()
