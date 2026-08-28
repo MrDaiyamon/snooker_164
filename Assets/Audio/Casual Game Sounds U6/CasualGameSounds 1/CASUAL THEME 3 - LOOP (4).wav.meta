@@ -1,14 +1,7 @@
 fileFormatVersion: 2
-guid: 79180f511d89441b9aa23ccae1992fe0
-labels:
-- Audio
-- Casual
-- Sound
-- SFX
-- Effect
-timeCreated: 1453238766
-licenseType: Store
+guid: 390e7a99cb0560f49a1dd255b0e3b819
 AudioImporter:
+  externalObjects: {}
   serializedVersion: 6
   defaultSettings:
     loadType: 0
@@ -22,14 +15,15 @@ AudioImporter:
   normalize: 1
   preloadAudioData: 1
   loadInBackground: 0
+  ambisonic: 0
   3D: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
-  productId: 54116
-  packageName: FREE Casual Game SFX Pack
-  packageVersion: 1.1
-  assetPath: Assets/CasualGameSounds/DM-CGS-28.wav
-  uploadId: 688818
+  productId: 242591
+  packageName: Free Casual Music Pack
+  packageVersion: 1.0
+  assetPath: Assets/FREE CASUAL MUSIC PACK/CASUAL THEME 3/CASUAL THEME 3 - LOOP (4).wav
+  uploadId: 553292
