@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
     private void ShootBall()
     {
         Rigidbody rb = cueBall.GetComponent<Rigidbody>();
-        rb.AddRelativeForce(Vector3.forward * 50, ForceMode.Impulse);
+        rb.AddRelativeForce(Vector3.forward * 60, ForceMode.Impulse);
         ballLine.SetActive(false);
 
         cam.transform.parent = null;
@@ -127,7 +127,7 @@ public class GameManager : MonoBehaviour
     }
     public void ShowString(string s)
     {
-        notiText.text = s;
+        notiText.text = s + $"\nTotal Score is {playerScore}" ;
     }
     private void SaveGame()
     {

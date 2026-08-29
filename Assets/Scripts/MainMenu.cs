@@ -21,6 +21,7 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         Settings.fromSave = false;
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Loading");
     }
 
@@ -28,6 +29,11 @@ public class MainMenu : MonoBehaviour
     {
         Settings.fromSave = true;
         SceneManager.LoadScene("Loading");
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
     public void ExitGame()
     {
